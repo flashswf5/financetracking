@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stock Tracker</title>
+</head>
+<body>
+    <header>
+        <h1>Stock Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Options Simulator</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#" id="logoutButton">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="userAuth">
+            <h2>Login / Register</h2>
+            <div id="loginForm">
+                <input type="text" placeholder="Username" id="usernameLogin">
+                <input type="password" placeholder="Password" id="passwordLogin">
+                <button class="button" id="login">Login</button>
+            </div>
+            <div id="registerForm">
+                <input type="text" placeholder="Username" id="usernameRegister">
+                <input type="password" placeholder="Password" id="passwordRegister">
+                <button class="button" id="register">Register</button>
+            </div>
+        </section>
+
+        <section id="stockDashboard" style="display: none;">
+            <h2>Stock Performance Dashboard</h2>
+                        <section id="addStock">
+                            <h2>Add Stock</h2>
+                            <form id="addStockForm">
+                                <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol" required>
+                                <button type="submit" class="button">Add Stock</button>
+                            </form>
+                        </section>
+                        <section id="createGroup">
+                            <h2>Create Group/Subgroup</h2>
+                            <form id="createGroupForm">
+                                <input type="text" id="groupName" placeholder="Enter Group Name" required>
+                                <input type="text" id="subgroupName" placeholder="Enter Subgroup Name (optional)">
+                                <button type="submit" class="button">Create Group</button>
+                            </form>
+                        </section>
+                        <section id="fileUploader">
+                            <h2>Upload Stocks File</h2>
+                            <form id="uploadFileForm" enctype="multipart/form-data">
+                                <input type="file" id="stockFile" name="stockFile" accept=".csv, .json">
+                                <button type="submit" class="button">Upload File</button>
+                                <label for="groupSelect">Select Group:</label>
+                                <select id="groupSelect">
+                                    <option value="">Select Group</option>
+                                </select>
+                                <label for="subgroupSelect">Select Subgroup:</label>
+                                <select id="subgroupSelect">
+                                    <option value="">Select Subgroup</option>
+                                </select>
+                                
+                            </form>
+                        </section>
+                        <section id="googleSheetForm">
+                            <h2>Google Sheet Information</h2>
+                            <form id="googleSheetForm">
+                                <label for="googleSheetLink">Google Sheet Link:</label>
+                                <input type="text" id="googleSheetLink" placeholder="Enter Google Sheet Link" required>
+                                <button type="submit" class="button">Send Info</button>
+                        </section>
+            </section>
+
+        <section id="optionsSimulator" style="display: none;">
+            <h2>Options Simulator</h2>
+        </section>
+
+        <section id="profile" style="display: none;">
+            <h2>User Profile</h2>
+
+        </section>
+        <section id="stockInformation" style="display: none;">
+            <h2>Stock Information</h2>
+        </section>
+
+        <section id="errors">
+            <h2>Errors</h2>
+            <div id="errorMessages"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Stock Tracker</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
